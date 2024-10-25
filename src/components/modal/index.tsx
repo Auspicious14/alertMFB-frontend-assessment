@@ -5,7 +5,6 @@ import React, { useState } from "react";
 
 interface IProps {
   onClose: () => void;
-  onBack?: () => void;
 }
 
 const SkeletonLoader = () => {
