@@ -7,11 +7,18 @@
   --text-color: #333;
 }
 
+@font-face {
+  font-family: "Ojah";
+  src: url("/fonts/OjahDisplay-SemiBold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Ojah", "Inter", sans-serif;
 }
 
 body {
@@ -20,6 +27,10 @@ body {
   color: var(--text-color);
 }
 
+p,
+button {
+  font-family: "Inter", sans-serif;
+}
 .container {
   display: flex;
 }
