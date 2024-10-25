@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 interface IProps {
   onClose: () => void;
+  onBack?: () => void;
 }
 
 const SkeletonLoader = () => {
@@ -114,83 +115,94 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                 </p>
 
                 <>
-                  <div className="content-card">
-                    <form action="">
-                      <div className="input-container">
-                        <div className="flex-label">
-                          <label htmlFor="">
-                            Where is your business located at?
-                          </label>
-                          <div className="star-red">*</div>
-                        </div>
-                        <select
-                          name="location"
-                          id="location"
-                          className="select-style"
-                        >
-                          <option value="nigeria">Nigeria</option>
-                          <option value="america">America</option>
-                          <option value="england">England</option>
-                        </select>
+                  <form action="" className="form-content-card">
+                    <div className="input-container">
+                      <div className="flex-label">
+                        <label htmlFor="">
+                          Where is your business located at?
+                        </label>
+                        <div className="star-red">*</div>
                       </div>
-                      <div className="input-container">
-                        <div className="flex-label">
-                          <label htmlFor="">What is your business name?</label>
-                          <div className="star-red">*</div>
-                        </div>
-                        <input type="text" name="name" id="name" className="" />
+                      <select
+                        name="location"
+                        id="location"
+                        className="select-style"
+                      >
+                        <option value="nigeria">Nigeria</option>
+                        <option value="america">America</option>
+                        <option value="england">England</option>
+                      </select>
+                    </div>
+                    <div className="input-container">
+                      <div className="flex-label">
+                        <label htmlFor="">What is your business name?</label>
+                        <div className="star-red">*</div>
                       </div>
-                      <div className="input-container">
-                        <div className="flex-label">
-                          <label htmlFor="">Business Industry</label>
-                          <div className="star-red">*</div>
-                        </div>
-                        <select
-                          name="industry"
-                          id="industry"
-                          className="select-style"
-                        >
-                          <option value="fashion">Fashion</option>
-                          <option value="pop">Pop</option>
-                          <option value="england">England</option>
-                        </select>
+                      <input type="text" name="name" id="name" className="" />
+                    </div>
+                    <div className="input-container">
+                      <div className="flex-label">
+                        <label htmlFor="">Business Industry</label>
+                        <div className="star-red">*</div>
                       </div>
-                      <div className="input-container">
-                        <div className="form-flex">
-                          <div className="form-flex-children">
-                            <div className="flex-label">
-                              <label htmlFor="">Company size</label>
-                              <div className="star-red">*</div>
-                            </div>
-                            <select
-                              name="size"
-                              id="size"
-                              className="select-style"
-                            >
-                              <option value="small">Small</option>
-                              <option value="mid">Medium</option>
-                              <option value="large">Large</option>
-                            </select>
+                      <select
+                        name="industry"
+                        id="industry"
+                        className="select-style"
+                      >
+                        <option value="fashion">Fashion</option>
+                        <option value="pop">Pop</option>
+                        <option value="england">England</option>
+                      </select>
+                    </div>
+                    <div className="input-container">
+                      <div className="form-flex">
+                        <div className="form-flex-children">
+                          <div className="flex-label">
+                            <label htmlFor="">Company size</label>
+                            <div className="star-red">*</div>
                           </div>
-                          <div className="form-flex-children">
-                            <div className="flex-label">
-                              <label htmlFor="">Estimated annual volume</label>
-                              <div className="star-red">*</div>
-                            </div>
-                            <select
-                              name="size"
-                              id="size"
-                              className="select-style"
-                            >
-                              <option value="small">Small</option>
-                              <option value="mid">Medium</option>
-                              <option value="large">Large</option>
-                            </select>
+                          <select
+                            name="size"
+                            id="size"
+                            className="select-style"
+                          >
+                            <option value="small">Small</option>
+                            <option value="mid">Medium</option>
+                            <option value="large">Large</option>
+                          </select>
+                        </div>
+                        <div className="form-flex-children">
+                          <div className="flex-label">
+                            <label htmlFor="">Estimated annual volume</label>
+                            <div className="star-red">*</div>
                           </div>
+                          <select
+                            name="size"
+                            id="size"
+                            className="select-style"
+                          >
+                            <option value="small">Small</option>
+                            <option value="mid">Medium</option>
+                            <option value="large">Large</option>
+                          </select>
                         </div>
                       </div>
-                    </form>
-                  </div>
+                    </div>
+                    <div className="action-buttons">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setModal({ show: true, type: "general" })
+                        }
+                      >
+                        Back
+                      </button>
+                      <button className="create-business">
+                        Create Business
+                      </button>
+                    </div>
+                  </form>
                 </>
               </div>
             )}
