@@ -211,14 +211,43 @@ h3 {
   }
 
   .currency-stats {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .financial-stats {
-    flex-direction: column;
+    flex-direction: row;
+    margin-block: 10px;
+    align-items: center;
   }
 
   .cards-activities {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+  .header h2 {
+    font-size: x-large;
+  }
+
+  .currency-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .financial-stats {
+    flex-direction: column;
+    margin-block: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 460px) {
+  .dashboard {
+    display: block;
+    padding-block: 10px;
   }
 }

@@ -2,6 +2,8 @@ import { IoClose } from "react-icons/io5";
 import "./modal.css";
 import { FaGreaterThan } from "react-icons/fa6";
 import React, { useState } from "react";
+import { updateForm } from "../../store/form";
+import { useDispatch } from "react-redux";
 
 interface IProps {
   onClose: () => void;
@@ -32,6 +34,32 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
     type?: "merchant" | "producer" | "agent" | "general";
   }>({ show: false, type: "general" });
 
+  const dispatch = useDispatch();
+
+  const [formData, setFormData] = useState({
+    location: "",
+    businessName: "",
+    industry: "",
+    companySize: "",
+    estimatedVolume: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const vals = dispatch(updateForm(formData));
+    console.log({ vals });
+    onClose();
+  };
   return (
     <div className="modal-shadow-container">
       <div className="modal-container">
@@ -43,9 +71,8 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
           <IoClose onClick={onClose} cursor={"pointer"} />
         </div>
         <div className="modal-flex">
-          <div style={{ width: "20%" }}>
-            <SkeletonLoader />
-          </div>
+          <SkeletonLoader />
+
           <div className="modal-general" style={{ width: "100%" }}>
             {modal.type === "general" && (
               <div className="modal-content">
@@ -114,7 +141,11 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                 </p>
 
                 <>
-                  <form action="" className="form-content-card">
+                  <form
+                    action=""
+                    onSubmit={handleSubmit}
+                    className="form-content-card"
+                  >
                     <div className="input-container">
                       <div className="flex-label">
                         <label htmlFor="">
@@ -125,6 +156,8 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                       <select
                         name="location"
                         id="location"
+                        value={formData.location}
+                        onChange={handleChange}
                         className="select-style"
                       >
                         <option value="nigeria">Nigeria</option>
@@ -137,7 +170,13 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                         <label htmlFor="">What is your business name?</label>
                         <div className="star-red">*</div>
                       </div>
-                      <input type="text" name="name" id="name" className="" />
+                      <input
+                        type="text"
+                        name="businessName"
+                        id="businessName"
+                        value={formData.businessName}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="input-container">
                       <div className="flex-label">
@@ -147,11 +186,13 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                       <select
                         name="industry"
                         id="industry"
+                        value={formData.industry}
+                        onChange={handleChange}
                         className="select-style"
                       >
                         <option value="fashion">Fashion</option>
                         <option value="pop">Pop</option>
-                        <option value="england">England</option>
+                        <option value="e-commerce">E-commerce</option>
                       </select>
                     </div>
                     <div className="input-container">
@@ -162,13 +203,14 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                             <div className="star-red">*</div>
                           </div>
                           <select
-                            name="size"
-                            id="size"
+                            name="companySize"
+                            id="companySize"
+                            value={formData.companySize}
+                            onChange={handleChange}
                             className="select-style"
                           >
-                            <option value="small">Small</option>
-                            <option value="mid">Medium</option>
-                            <option value="large">Large</option>
+                            <option value="1 - 100">1 - 100</option>
+                            <option value="101 - 200">101 - 200</option>
                           </select>
                         </div>
                         <div className="form-flex-children">
@@ -177,13 +219,18 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                             <div className="star-red">*</div>
                           </div>
                           <select
-                            name="size"
-                            id="size"
+                            name="estimatedVolume"
+                            id="estimatedVolume"
+                            value={formData.estimatedVolume}
+                            onChange={handleChange}
                             className="select-style"
                           >
-                            <option value="small">Small</option>
-                            <option value="mid">Medium</option>
-                            <option value="large">Large</option>
+                            <option value="$1000 - $10,000">
+                              $1000 - $10,000
+                            </option>
+                            <option value="$10,000 - $50,000">
+                              $10,000 - $50,000
+                            </option>
                           </select>
                         </div>
                       </div>
@@ -197,7 +244,7 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
                       >
                         Back
                       </button>
-                      <button className="create-business">
+                      <button type="submit" className="create-business">
                         Create Business
                       </button>
                     </div>

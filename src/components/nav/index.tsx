@@ -1,16 +1,17 @@
 import React from "react";
 import "./NavBar.css";
-import { FaBell, FaUserCircle } from "react-icons/fa"; // Icons
+import { FaBars, FaBell, FaUserCircle } from "react-icons/fa"; // Icons
 
-export const NavBar: React.FC = () => {
+interface IProps {
+  toggleSidebar: () => void;
+}
+export const NavBar: React.FC<IProps> = ({ toggleSidebar }) => {
   return (
     <div className="navbar">
-      {/* Left Side - Dashboard Text */}
       <div className="navbar-left">
         <h3>Dashboard</h3>
       </div>
 
-      {/* Right Side - User, Bell, Settings */}
       <div className="navbar-right">
         <FaBell className="navbar-icon" />
         <FaUserCircle className="navbar-icon" />
@@ -20,6 +21,7 @@ export const NavBar: React.FC = () => {
             <span className="toggle-ball"></span>
           </label>
         </div>
+        <FaBars className="navbar-icon navbar-menu" onClick={toggleSidebar} />
       </div>
     </div>
   );

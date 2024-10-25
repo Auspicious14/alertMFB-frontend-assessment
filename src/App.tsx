@@ -2,6 +2,8 @@ import { ChartComponent } from "./components/chart";
 import { MainLayout } from "./components/layout";
 import "./App.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 
 const cards = [
   {
@@ -69,11 +71,12 @@ const activities = [
 ];
 
 function App() {
+  const data = useSelector((state: RootState) => state.form);
   return (
     <MainLayout>
       <div className="main-content">
         <div className="header">
-          <h2>Good Afternoon, Payshiga</h2>
+          <h2>{`Good Afternoon, ${data?.businessName || "Payshiga"}  `}</h2>
           <p>Monday, January 23, 2023</p>
         </div>
         <div className="hero">
