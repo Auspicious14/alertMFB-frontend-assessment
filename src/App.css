@@ -1,0 +1,224 @@
+h3 {
+  padding-block: 10px;
+  font-weight: bolder;
+}
+
+.start p {
+  font-size: small;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 10px;
+}
+
+.header h2 {
+  font-size: xx-large;
+}
+.header p {
+  font-size: medium;
+}
+
+.currency-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trend-flex {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.currency-toggle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  color: rgb(219, 214, 214);
+}
+
+.first-currency {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  padding-inline: 10px;
+}
+
+.financial-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stat {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.stat-change,
+.stat-change-red {
+  color: rgb(58, 235, 137);
+  font-size: small;
+  font-weight: bold;
+}
+
+.stat-change-red {
+  color: red;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.add-money-btn,
+.send-money-btn,
+.money-in,
+.money-out {
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.action-button-icon {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgb(219, 214, 214);
+  text-align: center;
+}
+
+.add-money-btn {
+  background-color: rgb(97, 50, 224);
+  border: none;
+  color: white;
+}
+
+.send-money-btn {
+  border: 1px solid rgb(219, 214, 214);
+}
+
+.hero {
+  border-block: 1px solid rgb(219, 214, 214);
+  padding-block: 30px;
+}
+
+.desc-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-block: 10px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.dashboard {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.money-in {
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.money-out {
+  background-color: transparent;
+  color: rgb(219, 214, 214);
+}
+.money-out,
+.money-in {
+  border: none;
+  font-weight: 500;
+}
+
+.select-date {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(219, 214, 214);
+}
+
+.cards-activities {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  gap: 20px;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+  font-weight: 400;
+  padding-block: 20px;
+  align-items: center;
+  border-bottom: 1px solid rgb(219, 214, 214);
+}
+
+.card-width {
+  width: 100%;
+}
+
+.card-image-flex {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.card-status {
+  border-radius: 5px;
+  padding-block: 5px;
+  padding-inline: 5px;
+  font-weight: 400;
+}
+
+.locked {
+  border: 1px solid rgb(238, 188, 95);
+  color: rgb(238, 188, 95);
+}
+
+.active {
+  border: 1px solid rgba(140, 223, 195, 0.973);
+  color: rgb(63, 189, 116);
+}
+
+.card-list-account {
+  font-size: small;
+}
+
+.activity {
+  padding-block: 30px;
+}
+
+.activity-amount {
+  color: rgb(63, 189, 116);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .currency-stats {
+    flex-direction: column;
+  }
+
+  .financial-stats {
+    flex-direction: column;
+  }
+
+  .cards-activities {
+    flex-direction: column;
+  }
+}

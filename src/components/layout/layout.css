@@ -1,0 +1,39 @@
+.layout-container {
+  display: flex;
+  background-color: var(--bg-color);
+}
+
+.layout-content {
+  flex-grow: 1;
+  padding-left: var(--sidebar-width);
+  background-color: white;
+}
+
+.layout-children {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+p {
+  color: #999;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .layout-content {
+    padding-left: 0;
+  }
+}

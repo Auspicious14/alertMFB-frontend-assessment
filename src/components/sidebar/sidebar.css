@@ -1,0 +1,82 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 3px;
+  border-bottom: 1px solid rgb(219, 214, 214);
+  color: #333;
+}
+
+.sidebar-logo p {
+  color: #333;
+}
+
+.logo-business-id {
+  font-size: small;
+}
+.add-business,
+.sidebar-logo {
+  cursor: pointer;
+}
+
+.add-business {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  margin-top: 30px;
+}
+
+.sidebar-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar-list img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-footer li {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
