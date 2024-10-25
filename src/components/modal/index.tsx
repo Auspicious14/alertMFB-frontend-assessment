@@ -56,8 +56,7 @@ export const Modal: React.FC<IProps> = ({ onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const vals = dispatch(updateForm(formData));
-    console.log({ vals });
+    dispatch(updateForm(formData));
     onClose();
   };
   return (
